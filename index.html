@@ -15,7 +15,6 @@
     --henrik: #1a4d2e;
     --hanne: #1565c0;
     --sand: #f5f0e8;
-    --ocean: #e3f2fd;
   }
 
   body {
@@ -26,590 +25,104 @@
     color: #2c2c2c;
   }
 
-  .container {
-    max-width: 1100px;
-    margin: 0 auto;
-  }
+  .container { max-width: 1100px; margin: 0 auto; }
 
-  /* ===== HEADER ===== */
-  .hero {
-    text-align: center;
-    padding: 30px 0 10px;
-    position: relative;
-  }
+  .hero { text-align: center; padding: 30px 0 10px; }
+  .hero-emoji { font-size: 56px; display: block; margin-bottom: 6px; animation: sway 3s ease-in-out infinite; }
+  @keyframes sway { 0%, 100% { transform: rotate(-3deg); } 50% { transform: rotate(3deg); } }
+  .hero h1 { font-family: 'DM Serif Display', serif; font-size: 3.2rem; color: var(--green); letter-spacing: -1px; }
+  .hero p { font-size: 1.05rem; color: #6b7c72; margin-top: 8px; }
+  .hero .year-ring { display: inline-block; background: var(--green); color: white; padding: 4px 18px; border-radius: 30px; font-weight: 600; font-size: 0.85rem; margin-top: 8px; }
 
-  .hero-emoji {
-    font-size: 56px;
-    display: block;
-    margin-bottom: 6px;
-    animation: sway 3s ease-in-out infinite;
-  }
+  .beach { text-align: center; font-size: 2rem; padding: 18px 0 8px; letter-spacing: 8px; opacity: 0.5; }
 
-  @keyframes sway {
-    0%, 100% { transform: rotate(-3deg); }
-    50% { transform: rotate(3deg); }
-  }
-
-  .hero h1 {
-    font-family: 'DM Serif Display', serif;
-    font-size: 3.2rem;
-    color: var(--green);
-    letter-spacing: -1px;
-    line-height: 1.1;
-  }
-
-  .hero p {
-    font-size: 1.05rem;
-    color: #6b7c72;
-    margin-top: 8px;
-  }
-
-  .hero .year-ring {
-    display: inline-block;
-    background: var(--green);
-    color: white;
-    padding: 4px 18px;
-    border-radius: 30px;
-    font-weight: 600;
-    font-size: 0.85rem;
-    margin-top: 8px;
-    letter-spacing: 1px;
-  }
-
-  /* ===== BEACH DIVIDER ===== */
-  .beach {
-    text-align: center;
-    font-size: 2rem;
-    padding: 18px 0 8px;
-    letter-spacing: 8px;
-    opacity: 0.5;
-  }
-
-  /* ===== LEGEND ===== */
-  .legend {
-    display: flex;
-    justify-content: center;
-    gap: 24px;
-    margin: 20px 0 30px;
-    flex-wrap: wrap;
-  }
-
-  .legend-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    background: white;
-    padding: 8px 18px 8px 12px;
-    border-radius: 30px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-    font-weight: 500;
-    font-size: 0.9rem;
-  }
-
-  .legend-dot {
-    width: 22px;
-    height: 22px;
-    border-radius: 50%;
-    flex-shrink: 0;
-    position: relative;
-  }
-
-  .legend-dot::after {
-    content: '';
-    position: absolute;
-    inset: -3px;
-    border-radius: 50%;
-    border: 2px solid currentColor;
-    opacity: 0.3;
-  }
-
+  .legend { display: flex; justify-content: center; gap: 24px; margin: 20px 0 30px; flex-wrap: wrap; }
+  .legend-item { display: flex; align-items: center; gap: 10px; background: white; padding: 8px 18px 8px 12px; border-radius: 30px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); font-weight: 500; font-size: 0.9rem; }
+  .legend-dot { width: 22px; height: 22px; border-radius: 50%; flex-shrink: 0; position: relative; }
+  .legend-dot::after { content: ''; position: absolute; inset: -3px; border-radius: 50%; border: 2px solid currentColor; opacity: 0.3; }
   .legend-item.henrik .legend-dot { background: var(--henrik); }
   .legend-item.birgit .legend-dot { background: var(--birgit); }
   .legend-item.hanne .legend-dot { background: var(--hanne); }
 
-  /* ===== YEAR OVERVIEW (compact week layout) ===== */
   .year-overview {
-    background: white;
-    border-radius: 24px;
-    padding: 28px 20px 20px;
-    box-shadow: 0 8px 40px rgba(0,0,0,0.06);
-    border: 1px solid rgba(0,0,0,0.04);
+    background: white; border-radius: 24px; padding: 28px 20px 20px;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.06); border: 1px solid rgba(0,0,0,0.04);
     margin-bottom: 30px;
   }
 
   .overview-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 18px;
-    flex-wrap: wrap;
-    gap: 10px;
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 18px; flex-wrap: wrap; gap: 10px;
   }
+  .overview-header h2 { font-family: 'DM Serif Display', serif; font-size: 1.5rem; color: var(--green); }
 
-  .overview-header h2 {
-    font-family: 'DM Serif Display', serif;
-    font-size: 1.5rem;
-    color: var(--green);
-  }
+  .month-labels { display: flex; margin-bottom: 4px; height: 22px; }
+  .month-label { flex: 1; font-size: 0.7rem; font-weight: 600; color: #8a9b91; text-transform: uppercase; letter-spacing: 0.3px; position: relative; }
+  .month-label::before { content: ''; position: absolute; left: 0; bottom: -4px; height: 2px; width: 1px; background: #ddd; }
 
-  .overview-header .controls {
-    display: flex;
-    gap: 8px;
-  }
-
-  .overview-header .controls button {
-    background: var(--sand);
-    border: none;
-    padding: 8px 16px;
-    border-radius: 20px;
-    font-family: 'Inter', sans-serif;
-    font-size: 0.8rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.15s;
-    color: #555;
-  }
-
-  .overview-header .controls button:hover {
-    background: var(--green);
-    color: white;
-  }
-
-  .overview-header .controls button.active {
-    background: var(--green);
-    color: white;
-  }
-
-  /* Season bar - the main visualization */
-  .season-bar-wrapper {
-    position: relative;
-    padding: 6px 0;
-  }
-
-  .month-labels {
-    display: flex;
-    margin-bottom: 4px;
-    position: relative;
-    height: 22px;
-  }
-
-  .month-label {
-    flex: 1;
-    font-size: 0.7rem;
-    font-weight: 600;
-    color: #8a9b91;
-    text-transform: uppercase;
-    letter-spacing: 0.3px;
-    position: relative;
-  }
-
-  .month-label::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -4px;
-    height: 2px;
-    width: 1px;
-    background: #ddd;
-  }
-
-  /* Week blocks */
-  .weeks-row {
-    display: flex;
-    gap: 3px;
-    margin: 2px 0;
-  }
-
+  .weeks-row { display: flex; gap: 3px; margin: 2px 0; }
   .week-block {
-    position: relative;
-    border-radius: 6px;
+    position: relative; border-radius: 8px; cursor: pointer; flex: 1;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    padding: 10px 2px; min-height: 62px;
     transition: transform 0.15s, box-shadow 0.15s;
-    cursor: pointer;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 8px 2px;
-    min-height: 56px;
   }
-
-  .week-block:hover {
-    transform: scaleY(1.08);
-    z-index: 2;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
-  }
-
-  .week-block .week-num {
-    font-size: 0.6rem;
-    font-weight: 700;
-    opacity: 0.9;
-    letter-spacing: 0.2px;
-  }
-
-  .week-block .week-initial {
-    font-size: 0.65rem;
-    font-weight: 600;
-    opacity: 0.95;
-    margin-top: 1px;
-  }
-
-  .week-block.owner-henrik {
-    background: linear-gradient(135deg, #1a4d2e, #2e7d5a);
-    color: white;
-  }
-
-  .week-block.owner-birgit {
-    background: linear-gradient(135deg, #d6336c, #e64980);
-    color: white;
-  }
-
-  .week-block.owner-hanne {
-    background: linear-gradient(135deg, #1565c0, #1e88e5);
-    color: white;
-  }
-
-  .week-block.owner-off {
-    background: rgba(0,0,0,0.04);
-    color: #bbb;
-  }
-
-  .week-block.owner-off .week-num {
-    color: #ccc;
-  }
+  .week-block:hover { transform: scaleY(1.08); z-index: 2; box-shadow: 0 4px 16px rgba(0,0,0,0.15); }
+  .week-block .week-num { font-size: 0.6rem; font-weight: 700; opacity: 0.9; letter-spacing: 0.2px; }
+  .week-block .week-initial { font-size: 0.7rem; font-weight: 600; opacity: 0.95; margin-top: 2px; }
+  .week-block.owner-henrik { background: linear-gradient(135deg, #1a4d2e, #2e7d5a); color: white; }
+  .week-block.owner-birgit { background: linear-gradient(135deg, #d6336c, #e64980); color: white; }
+  .week-block.owner-hanne { background: linear-gradient(135deg, #1565c0, #1e88e5); color: white; }
 
   .week-block .tooltip {
-    display: none;
-    position: absolute;
-    bottom: calc(100% + 8px);
-    left: 50%;
-    transform: translateX(-50%);
-    background: #2c2c2c;
-    color: white;
-    padding: 8px 14px;
-    border-radius: 10px;
-    font-size: 0.75rem;
-    font-weight: 400;
-    white-space: nowrap;
-    z-index: 20;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+    display: none; position: absolute; bottom: calc(100% + 8px); left: 50%; transform: translateX(-50%);
+    background: #2c2c2c; color: white; padding: 8px 14px; border-radius: 10px;
+    font-size: 0.75rem; white-space: nowrap; z-index: 20; box-shadow: 0 6px 20px rgba(0,0,0,0.25);
   }
-
   .week-block .tooltip::after {
-    content: '';
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    border: 5px solid transparent;
-    border-top-color: #2c2c2c;
+    content: ''; position: absolute; top: 100%; left: 50%; transform: translateX(-50%);
+    border: 5px solid transparent; border-top-color: #2c2c2c;
   }
+  .week-block:hover .tooltip { display: block; }
 
-  .week-block:hover .tooltip {
-    display: block;
-  }
+  .month-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 16px; }
+  .month-card { background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.04); }
+  .month-card-header { padding: 10px 14px; font-family: 'DM Serif Display', serif; font-size: 1rem; color: white; display: flex; justify-content: space-between; align-items: center; }
+  .month-card-header.summer { background: linear-gradient(135deg, var(--green), #2e7d5a); }
+  .month-card-header.spring { background: linear-gradient(135deg, #6a994e, #8ab17d); }
+  .month-card-header.autumn { background: linear-gradient(135deg, #bc6c25, #dda15e); }
+  .month-card-header.winter { background: linear-gradient(135deg, #5c6b73, #8a9ba8); }
+  .month-card-header .week-range { font-family: 'Inter', sans-serif; font-size: 0.65rem; font-weight: 500; opacity: 0.8; }
+  .month-card-body { padding: 6px; display: grid; grid-template-columns: repeat(7, 1fr); gap: 1px; }
+  .month-card-body .day-label { font-size: 0.55rem; font-weight: 600; color: #999; text-align: center; padding: 4px 0 2px; text-transform: uppercase; }
+  .month-card-body .day { aspect-ratio: 1; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; font-weight: 500; border-radius: 6px; position: relative; }
+  .month-card-body .day.other-month { color: #ddd; }
+  .month-card-body .day.booked { color: white; font-weight: 600; }
+  .month-card-body .day.booked-henrik { background: var(--henrik); }
+  .month-card-body .day.booked-birgit { background: var(--birgit); }
+  .month-card-body .day.booked-hanne { background: var(--hanne); }
+  .month-card-body .day.today { box-shadow: inset 0 0 0 2px var(--gold); font-weight: 700; }
 
-  /* ===== MONTH CARDS (alternative view) ===== */
-  .month-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 16px;
-  }
+  .booking-list-section { margin-top: 30px; }
+  .booking-list-section h2 { font-family: 'DM Serif Display', serif; font-size: 1.5rem; color: var(--green); margin-bottom: 16px; text-align: center; }
+  .booking-cards { display: grid; gap: 10px; }
+  .booking-card { display: flex; align-items: center; gap: 14px; background: white; border-radius: 14px; padding: 14px 18px; box-shadow: 0 2px 8px rgba(0,0,0,0.03); border: 1px solid rgba(0,0,0,0.04); transition: transform 0.15s; }
+  .booking-card:hover { transform: translateX(4px); }
+  .booking-card .color-bar { width: 5px; height: 44px; border-radius: 3px; flex-shrink: 0; }
+  .booking-card .book-info { flex: 1; }
+  .booking-card .book-owner { font-weight: 600; font-size: 0.95rem; }
+  .booking-card .book-dates { font-size: 0.8rem; color: #666; margin-top: 2px; }
+  .booking-card .book-weeks { font-size: 0.75rem; font-weight: 600; color: #999; background: var(--sand); padding: 4px 12px; border-radius: 20px; white-space: nowrap; }
 
-  .month-card {
-    background: white;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
-    border: 1px solid rgba(0,0,0,0.04);
-    transition: transform 0.15s;
-  }
+  .stats-row { display: flex; justify-content: center; gap: 20px; margin: 0 0 30px; flex-wrap: wrap; }
+  .stat-pill { background: white; padding: 10px 22px; border-radius: 30px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); display: flex; align-items: center; gap: 10px; font-size: 0.85rem; }
+  .stat-pill strong { font-size: 1.3rem; font-weight: 700; color: var(--green); }
 
-  .month-card:hover {
-    transform: translateY(-1px);
-  }
+  .footer { text-align: center; margin-top: 40px; padding: 20px; color: #9aab9f; font-size: 0.75rem; }
 
-  .month-card-header {
-    padding: 10px 14px;
-    font-family: 'DM Serif Display', serif;
-    font-size: 1rem;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .month-card-header.summer {
-    background: linear-gradient(135deg, var(--green), #2e7d5a);
-  }
-  .month-card-header.spring {
-    background: linear-gradient(135deg, #6a994e, #8ab17d);
-  }
-  .month-card-header.autumn {
-    background: linear-gradient(135deg, #bc6c25, #dda15e);
-  }
-  .month-card-header.winter {
-    background: linear-gradient(135deg, #5c6b73, #8a9ba8);
-  }
-
-  .month-card-header .week-range {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.65rem;
-    font-weight: 500;
-    opacity: 0.8;
-  }
-
-  .month-card-body {
-    padding: 6px;
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 1px;
-  }
-
-  .month-card-body .day-label {
-    font-size: 0.55rem;
-    font-weight: 600;
-    color: #999;
-    text-align: center;
-    padding: 4px 0 2px;
-    text-transform: uppercase;
-  }
-
-  .month-card-body .day {
-    aspect-ratio: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.7rem;
-    font-weight: 500;
-    border-radius: 6px;
-    position: relative;
-  }
-
-  .month-card-body .day.other-month {
-    color: #ddd;
-  }
-
-  .month-card-body .day.booked {
-    color: white;
-    font-weight: 600;
-  }
-
-  .month-card-body .day.booked-henrik {
-    background: var(--henrik);
-  }
-  .month-card-body .day.booked-birgit {
-    background: var(--birgit);
-  }
-  .month-card-body .day.booked-hanne {
-    background: var(--hanne);
-  }
-
-  .month-card-body .day.today {
-    box-shadow: inset 0 0 0 2px var(--gold);
-    font-weight: 700;
-  }
-
-  /* View toggle */
-  .view-toggle {
-    display: none; /* always year-overview for now */
-  }
-
-  /* ===== DETAILED BOOKING LIST ===== */
-  .booking-list-section {
-    margin-top: 30px;
-  }
-
-  .booking-list-section h2 {
-    font-family: 'DM Serif Display', serif;
-    font-size: 1.5rem;
-    color: var(--green);
-    margin-bottom: 16px;
-    text-align: center;
-  }
-
-  .booking-cards {
-    display: grid;
-    gap: 10px;
-  }
-
-  .booking-card {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    background: white;
-    border-radius: 14px;
-    padding: 14px 18px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
-    border: 1px solid rgba(0,0,0,0.04);
-    transition: transform 0.15s;
-  }
-
-  .booking-card:hover {
-    transform: translateX(4px);
-  }
-
-  .booking-card .color-bar {
-    width: 5px;
-    height: 44px;
-    border-radius: 3px;
-    flex-shrink: 0;
-  }
-
-  .booking-card .book-info {
-    flex: 1;
-  }
-
-  .booking-card .book-owner {
-    font-weight: 600;
-    font-size: 0.95rem;
-  }
-
-  .booking-card .book-dates {
-    font-size: 0.8rem;
-    color: #666;
-    margin-top: 2px;
-  }
-
-  .booking-card .book-weeks {
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: #999;
-    background: var(--sand);
-    padding: 4px 12px;
-    border-radius: 20px;
-    white-space: nowrap;
-  }
-
-  /* ===== STATS ===== */
-  .stats-row {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin: 0 0 30px;
-    flex-wrap: wrap;
-  }
-
-  .stat-pill {
-    background: white;
-    padding: 10px 22px;
-    border-radius: 30px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 0.85rem;
-  }
-
-  .stat-pill strong {
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: var(--green);
-  }
-
-  /* ===== CONFIG PANEL ===== */
-  .config-panel {
-    background: white;
-    border-radius: 20px;
-    padding: 24px;
-    margin-bottom: 30px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-    border: 1px solid rgba(0,0,0,0.04);
-    display: none;
-  }
-
-  .config-panel.open {
-    display: block;
-  }
-
-  .config-panel h3 {
-    font-family: 'DM Serif Display', serif;
-    font-size: 1.2rem;
-    color: var(--green);
-    margin-bottom: 16px;
-  }
-
-  .config-row {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin-bottom: 14px;
-    align-items: end;
-  }
-
-  .config-field {
-    flex: 1;
-    min-width: 140px;
-  }
-
-  .config-field label {
-    display: block;
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: #666;
-    margin-bottom: 4px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
-
-  .config-field select,
-  .config-field input {
-    width: 100%;
-    padding: 8px 12px;
-    border: 1.5px solid #ddd;
-    border-radius: 10px;
-    font-family: 'Inter', sans-serif;
-    font-size: 0.9rem;
-    background: white;
-  }
-
-  .config-field select:focus,
-  .config-field input:focus {
-    outline: none;
-    border-color: var(--green);
-  }
-
-  .config-apply {
-    background: var(--green);
-    color: white;
-    border: none;
-    padding: 10px 28px;
-    border-radius: 30px;
-    font-family: 'Inter', sans-serif;
-    font-weight: 600;
-    font-size: 0.9rem;
-    cursor: pointer;
-    transition: all 0.15s;
-  }
-
-  .config-apply:hover {
-    background: #2e7d5a;
-    transform: translateY(-1px);
-  }
-
-  /* ===== FOOTER ===== */
-  .footer {
-    text-align: center;
-    margin-top: 40px;
-    padding: 20px;
-    color: #9aab9f;
-    font-size: 0.75rem;
-  }
-
-  .footer a {
-    color: var(--green);
-    text-decoration: none;
-    cursor: pointer;
-  }
-
-  .footer a:hover {
-    text-decoration: underline;
-  }
-
-  /* ===== RESPONSIVE ===== */
   @media (max-width: 700px) {
     .hero h1 { font-size: 2rem; }
-    .week-block { min-height: 44px; padding: 6px 1px; }
+    .week-block { min-height: 48px; padding: 8px 1px; }
     .week-block .week-num { font-size: 0.5rem; }
     .week-block .week-initial { font-size: 0.55rem; }
     .month-grid { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); }
@@ -619,163 +132,94 @@
     .stat-pill { font-size: 0.75rem; padding: 8px 14px; }
     .stat-pill strong { font-size: 1rem; }
   }
-
-  @media (max-width: 450px) {
-    body { padding: 16px 8px; }
-    .year-overview { padding: 16px 10px; }
-    .week-block { min-height: 36px; padding: 4px 1px; }
-    .month-grid { grid-template-columns: 1fr; }
-  }
 </style>
 </head>
 <body>
 
 <div class="container">
-
-  <!-- ===== HERO ===== -->
   <div class="hero">
     <span class="hero-emoji">🏖️</span>
     <h1>Vores Sommerhus</h1>
-    <p>2-ugers turnus &middot; 3 ejere &middot; sæson 2026</p>
-    <div class="year-ring">2026 &middot; ☀️</div>
+    <p>2-ugers turnus &middot; Birgit &middot; Henrik &middot; Hanne &middot; 2026</p>
+    <div class="year-ring">📅 Fra Google Kalender</div>
   </div>
 
   <div class="beach">🌊 🏄 🐚 ☀️ 🦀 🏖️</div>
 
-  <!-- ===== LEGEND ===== -->
   <div class="legend">
-    <div class="legend-item henrik">
-      <div class="legend-dot"></div>
-      <span>Henrik</span>
-    </div>
-    <div class="legend-item birgit">
-      <div class="legend-dot"></div>
-      <span>Birgit</span>
-    </div>
-    <div class="legend-item hanne">
-      <div class="legend-dot"></div>
-      <span>Hanne</span>
-    </div>
+    <div class="legend-item henrik"><div class="legend-dot"></div><span>Henrik 🟢</span></div>
+    <div class="legend-item birgit"><div class="legend-dot"></div><span>Birgit 🔴</span></div>
+    <div class="legend-item hanne"><div class="legend-dot"></div><span>Hanne 🔵</span></div>
   </div>
 
-  <!-- ===== STATS ===== -->
-  <div class="stats-row" id="statsRow">
-    <div class="stat-pill">📊 <strong id="totalBlocks">0</strong> bookinger</div>
-    <div class="stat-pill">📅 <strong id="totalWeeks">0</strong> uger</div>
-    <div class="stat-pill" id="henrikWeeks">🟢 <strong>0</strong> uger</div>
-    <div class="stat-pill" id="birgitWeeks">🟠 <strong>0</strong> uger</div>
-    <div class="stat-pill" id="hanneWeeks">🔵 <strong>0</strong> uger</div>
-  </div>
+  <div class="stats-row" id="statsRow"></div>
 
-  <!-- ===== CONFIG ===== -->
-  <div style="text-align:center;margin-bottom:16px;">
-    <a href="#" onclick="toggleConfig();return false;" style="color:var(--green);font-size:0.85rem;font-weight:500;">
-      ⚙️ Tilpas sæson & turnus
-    </a>
-  </div>
-
-  <div class="config-panel" id="configPanel">
-    <h3>⚙️ Sæsonindstillinger</h3>
-    <div class="config-row">
-      <div class="config-field">
-        <label>Sæson starter</label>
-        <select id="seasonStart">
-          <option value="14">Uge 14 (30. mar)</option>
-          <option value="15">Uge 15 (6. apr)</option>
-          <option value="16">Uge 16 (13. apr)</option>
-          <option value="17" selected>Uge 17 (20. apr)</option>
-          <option value="18">Uge 18 (27. apr)</option>
-          <option value="19">Uge 19 (4. maj)</option>
-          <option value="20">Uge 20 (11. maj)</option>
-        </select>
-      </div>
-      <div class="config-field">
-        <label>Sæson slutter</label>
-        <select id="seasonEnd">
-          <option value="38">Uge 38 (14. sep)</option>
-          <option value="39">Uge 39 (21. sep)</option>
-          <option value="40">Uge 40 (28. sep)</option>
-          <option value="41" selected>Uge 41 (5. okt)</option>
-          <option value="42">Uge 42 (12. okt)</option>
-          <option value="43">Uge 43 (19. okt)</option>
-        </select>
-      </div>
-      <div class="config-field">
-        <label>Bloklængde</label>
-        <select id="blockWeeks">
-          <option value="1">1 uge</option>
-          <option value="2" selected>2 uger</option>
-          <option value="3">3 uger</option>
-        </select>
-      </div>
-      <div class="config-field">
-        <label>Første ejer</label>
-        <select id="firstOwner">
-          <option value="Henrik" selected>Henrik</option>
-          <option value="Birgit">Birgit</option>
-          <option value="Hanne">Hanne</option>
-        </select>
-      </div>
-    </div>
-    <div style="text-align:right;">
-      <button class="config-apply" onclick="applyConfig()">✅ Opdater kalender</button>
-    </div>
-  </div>
-
-  <!-- ===== YEAR OVERVIEW ===== -->
-  <div class="year-overview" id="yearOverview">
+  <div class="year-overview">
     <div class="overview-header">
       <h2>📆 Sæsonen 2026</h2>
       <div class="controls">
-        <button onclick="showAllMonths()">📅 Alle måneder</button>
-        <button onclick="showSummerOnly()" class="active" id="summerBtn">☀️ Sommer</button>
+        <button onclick="showYearView()" class="active" id="yearBtn">📅 År</button>
+        <button onclick="showMonthView()" id="monthBtn">🗓️ Måneder</button>
       </div>
     </div>
     <div id="seasonVisualization"></div>
   </div>
 
-  <!-- ===== MONTH DETAIL ===== -->
   <div style="display:none;" id="monthDetailView">
     <div style="text-align:center;margin-bottom:16px;">
-      <button onclick="showSummerOnly();return false;" style="background:var(--green);color:white;border:none;padding:8px 20px;border-radius:30px;font-family:'Inter',sans-serif;font-weight:500;cursor:pointer;">
-        ← Tilbage til årsoverblik
-      </button>
+      <button onclick="showYearView();return false;" style="background:var(--green);color:white;border:none;padding:8px 20px;border-radius:30px;font-family:'Inter',sans-serif;font-weight:500;cursor:pointer;">← Tilbage til årsoverblik</button>
     </div>
     <div class="month-grid" id="monthGrid"></div>
   </div>
 
-  <!-- ===== BOOKING LIST ===== -->
   <div class="booking-list-section">
     <h2>📋 Alle bookinger</h2>
     <div class="booking-cards" id="bookingCards"></div>
   </div>
 
   <div class="beach" style="opacity:0.3;">🏖️ 🐚 🌊</div>
-
-  <div class="footer">
-    Lavet med ☀️ af Oscar til Henrik &middot; 2026<br>
-    <a href="#" onclick="toggleConfig();return false;">⚙️ Justér sæson</a>
-  </div>
+  <div class="footer">Lavet med ☀️ af Oscar &middot; Data fra Google Kalender</div>
 </div>
 
 <script>
-// ===== CONFIG =====
-const owners = ["Henrik", "Birgit", "Hanne"];
+// ===== RIGTIGE BOOKINGDATA fra Sommerhus-kalenderen =====
+const bookings = [
+  { who: "Birgit", start: [2025,12,20], end: [2026,1,4], color: "birgit" },
+  { who: "Henrik", start: [2026,1,3], end: [2026,1,18], color: "henrik" },
+  { who: "Hanne",  start: [2026,1,17], end: [2026,2,1], color: "hanne" },
+  { who: "Birgit", start: [2026,1,31], end: [2026,2,15], color: "birgit" },
+  { who: "Henrik", start: [2026,2,14], end: [2026,3,1], color: "henrik" },
+  { who: "Hanne",  start: [2026,2,28], end: [2026,3,15], color: "hanne" },
+  { who: "Birgit", start: [2026,3,14], end: [2026,3,29], color: "birgit" },
+  { who: "Henrik", start: [2026,3,28], end: [2026,4,12], color: "henrik" },
+  { who: "Hanne",  start: [2026,4,11], end: [2026,4,26], color: "hanne" },
+  { who: "Birgit", start: [2026,4,25], end: [2026,5,10], color: "birgit" },
+  { who: "Henrik", start: [2026,5,9],  end: [2026,5,24], color: "henrik" },
+  { who: "Hanne",  start: [2026,5,23], end: [2026,6,7], color: "hanne" },
+  { who: "Birgit", start: [2026,6,6],  end: [2026,6,21], color: "birgit" },
+  { who: "Henrik", start: [2026,6,20], end: [2026,7,5], color: "henrik" },
+  { who: "Hanne",  start: [2026,7,4],  end: [2026,7,19], color: "hanne" },
+  { who: "Birgit", start: [2026,7,18], end: [2026,8,2], color: "birgit" },
+  { who: "Henrik", start: [2026,8,1],  end: [2026,8,16], color: "henrik" },
+  { who: "Hanne",  start: [2026,8,15], end: [2026,8,30], color: "hanne" },
+  { who: "Birgit", start: [2026,8,29], end: [2026,9,13], color: "birgit" },
+  { who: "Henrik", start: [2026,9,12], end: [2026,9,27], color: "henrik" },
+  { who: "Hanne",  start: [2026,9,26], end: [2026,10,11], color: "hanne" },
+  { who: "Birgit", start: [2026,10,10], end: [2026,10,25], color: "birgit" },
+  { who: "Henrik", start: [2026,10,24], end: [2026,11,8], color: "henrik" },
+  { who: "Hanne",  start: [2026,11,7], end: [2026,11,22], color: "hanne" },
+  { who: "Birgit", start: [2026,11,21], end: [2026,12,6], color: "birgit" },
+  { who: "Henrik", start: [2026,12,5], end: [2026,12,20], color: "henrik" },
+  { who: "Hanne",  start: [2026,12,19], end: [2027,1,3], color: "hanne" },
+];
+
 const ownerColors = { "Henrik": "#1a4d2e", "Birgit": "#d6336c", "Hanne": "#1565c0" };
-const ownerInitials = { "Henrik": "H", "Birgit": "B", "Hanne": "Hn" };
-const ownerClasses = { "Henrik": "henrik", "Birgit": "birgit", "Hanne": "hanne" };
+const monthNames = ["Januar","Februar","Marts","April","Maj","Juni","Juli","August","September","Oktober","November","December"];
+const monthShort = ["Jan","Feb","Mar","Apr","Maj","Jun","Jul","Aug","Sep","Okt","Nov","Dec"];
+const dayNames = ["Man","Tir","Ons","Tor","Fre","Lør","Søn"];
 
-let config = {
-  seasonStart: 17,
-  seasonEnd: 41,
-  blockWeeks: 2,
-  firstOwner: "Henrik"
-};
-
-// ===== HELPERS =====
 function getWeekNumber(d) {
   const date = new Date(d.getFullYear(), d.getMonth(), d.getDate());
-  date.setHours(0,0,0,0);
   date.setDate(date.getDate() + 3 - (date.getDay() + 6) % 7);
   const week1 = new Date(date.getFullYear(), 0, 4);
   return 1 + Math.round(((date - week1) / 86400000 - 3 + (week1.getDay() + 6) % 7) / 7);
@@ -791,117 +235,115 @@ function getWeekMonday(year, week) {
 }
 
 function formatDate(d) {
-  return `${d.getDate()}. ${['Jan','Feb','Mar','Apr','Maj','Jun','Jul','Aug','Sep','Okt','Nov','Dec'][d.getMonth()]}`;
+  return `${d.getDate()}. ${monthShort[d.getMonth()]}`;
 }
 
 function formatDateRange(start, end) {
   return `${formatDate(start)} – ${formatDate(end)}`;
 }
 
-function getMonthName(m) {
-  return ['Januar','Februar','Marts','April','Maj','Juni','Juli','August','September','Oktober','November','December'][m];
-}
+// Build booking objects
+const bookingRanges = [];
+const bookedDays = new Map();
 
-function getMonthShort(m) {
-  return ['Jan','Feb','Mar','Apr','Maj','Jun','Jul','Aug','Sep','Okt','Nov','Dec'][m];
-}
-
-// ===== GENERATE SCHEDULE =====
-function generateSchedule(cfg) {
-  const { seasonStart, seasonEnd, blockWeeks, firstOwner } = cfg;
-  const startIdx = owners.indexOf(firstOwner);
-  const schedule = [];
-  let week = seasonStart;
-  let ownerIdx = 0;
-
-  while (week <= seasonEnd) {
-    const owner = owners[(startIdx + ownerIdx) % 3];
-    const endWeek = Math.min(week + blockWeeks - 1, seasonEnd);
-    const startDate = getWeekMonday(2026, week);
-    const endDate = getWeekMonday(2026, endWeek);
-    endDate.setDate(endDate.getDate() + 6);
-
-    schedule.push({
-      owner,
-      startWeek: week,
-      endWeek: endWeek,
-      startDate,
-      endDate,
-      weeks: endWeek - week + 1,
-      color: ownerColors[owner],
-      cls: ownerClasses[owner]
-    });
-
-    week += blockWeeks;
-    ownerIdx++;
+bookings.forEach(b => {
+  const start = new Date(b.start[0], b.start[1]-1, b.start[2]);
+  const end = new Date(b.end[0], b.end[1]-1, b.end[2]);
+  const days = [];
+  for (let d = new Date(start); d <= end; d.setDate(d.getDate() + 1)) {
+    const key = `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+    bookedDays.set(key, b.who);
+    days.push(key);
   }
+  bookingRanges.push({ ...b, startDate: start, endDate: end, days });
+});
 
-  return schedule;
-}
+// Find season range
+let minWeek = 99, maxWeek = 0;
+bookingRanges.forEach(b => {
+  const sw = getWeekNumber(b.startDate);
+  const ew = getWeekNumber(b.endDate);
+  if (sw < minWeek) minWeek = sw;
+  if (ew > maxWeek) maxWeek = ew;
+});
 
 // ===== RENDER =====
 function render() {
-  const schedule = generateSchedule(config);
-
   // Stats
-  const totalWeeks = schedule.reduce((s, b) => s + b.weeks, 0);
-  const ownerWeeks = {};
-  owners.forEach(o => ownerWeeks[o] = 0);
-  schedule.forEach(b => ownerWeeks[b.owner] += b.weeks);
+  const totalDays = bookedDays.size;
+  const ownerDays = {};
+  bookingRanges.forEach(b => {
+    ownerDays[b.who] = (ownerDays[b.who] || 0) + b.days.length;
+  });
 
-  document.getElementById('totalBlocks').textContent = schedule.length;
-  document.getElementById('totalWeeks').textContent = totalWeeks;
-  document.getElementById('henrikWeeks').innerHTML = '🟢 <strong>' + (ownerWeeks['Henrik'] || 0) + '</strong> uger';
-  document.getElementById('birgitWeeks').innerHTML = '🔴 <strong>' + (ownerWeeks['Birgit'] || 0) + '</strong> uger';
-  document.getElementById('hanneWeeks').innerHTML = '🔵 <strong>' + (ownerWeeks['Hanne'] || 0) + '</strong> uger';
+  const stats = document.getElementById('statsRow');
+  stats.innerHTML = `
+    <div class="stat-pill">📊 <strong>${bookingRanges.length}</strong> bookinger</div>
+    <div class="stat-pill">📅 <strong>${totalDays}</strong> dage</div>
+    <div class="stat-pill">🟢 <strong>${ownerDays['Henrik']||0}</strong> dage</div>
+    <div class="stat-pill">🔴 <strong>${ownerDays['Birgit']||0}</strong> dage</div>
+    <div class="stat-pill">🔵 <strong>${ownerDays['Hanne']||0}</strong> dage</div>
+  `;
 
-  renderSeasonBar(schedule);
-  renderBookingList(schedule);
+  renderSeasonBar();
+  renderBookingList();
 }
 
 // ===== SEASON BAR =====
-function renderSeasonBar(schedule) {
+function renderSeasonBar() {
   const container = document.getElementById('seasonVisualization');
-  const { seasonStart, seasonEnd } = config;
 
   // Month labels
   let html = '<div class="month-labels">';
   const months = [];
-  for (let w = seasonStart; w <= seasonEnd; w++) {
+  for (let w = minWeek; w <= maxWeek; w++) {
     const monday = getWeekMonday(2026, w);
     const m = monday.getMonth();
     if (!months.includes(m)) {
       months.push(m);
-      // Calculate width based on number of weeks in this month that fall in the season
       let count = 0;
-      for (let w2 = seasonStart; w2 <= seasonEnd; w2++) {
+      for (let w2 = minWeek; w2 <= maxWeek; w2++) {
         const d = getWeekMonday(2026, w2);
         if (d.getMonth() === m) count++;
       }
-      html += `<div class="month-label" style="flex:${count}">${getMonthShort(m)}</div>`;
+      html += `<div class="month-label" style="flex:${count}">${monthShort[m]}</div>`;
     }
   }
   html += '</div>';
 
   // Week blocks
   html += '<div class="weeks-row">';
-  const allWeeks = [];
-  for (let w = seasonStart; w <= seasonEnd; w++) {
+  for (let w = minWeek; w <= maxWeek; w++) {
     const monday = getWeekMonday(2026, w);
-    const booking = schedule.find(b => w >= b.startWeek && w <= b.endWeek);
+    // Find who has this week booked
+    let owner = null;
+    for (const b of bookingRanges) {
+      if (monday >= b.startDate && monday <= b.endDate) {
+        owner = b;
+        break;
+      }
+    }
 
-    if (booking) {
-      // Is this the first week of the block?
-      const isFirst = w === booking.startWeek;
-      html += `<div class="week-block owner-${booking.cls}" onclick="alert('${booking.owner}\\nUge ${booking.startWeek}-${booking.endWeek}\\n${formatDateRange(booking.startDate, booking.endDate)}')">
-        <span class="week-num">${w}</span>
-        ${isFirst ? `<span class="week-initial">${booking.owner}</span>` : ''}
-        <div class="tooltip">${booking.owner} · Uge ${booking.startWeek}-${booking.endWeek}<br>${formatDateRange(booking.startDate, booking.endDate)}</div>
-      </div>`;
+    if (owner) {
+      const isFirst = monday.getTime() === owner.startDate.getTime() ||
+        (monday >= owner.startDate && new Date(monday.getTime() - 86400000 * 7) < owner.startDate);
+      // Check if this week's Monday falls within this booking
+      const weekEnd = new Date(monday);
+      weekEnd.setDate(weekEnd.getDate() + 7);
+      const overlaps = owner.startDate < weekEnd && owner.endDate >= monday;
+
+      if (overlaps) {
+        const cls = owner.who.toLowerCase();
+        html += `<div class="week-block owner-${cls}" onclick="alert('${owner.who}\\n${formatDateRange(owner.startDate, owner.endDate)}')">
+          <span class="week-num">${w}</span>
+          ${isFirst ? `<span class="week-initial">${owner.who}</span>` : ''}
+          <div class="tooltip">${owner.who} · ${formatDateRange(owner.startDate, owner.endDate)}</div>
+        </div>`;
+      } else {
+        html += `<div class="week-block" style="background:rgba(0,0,0,0.04);color:#ccc;"><span class="week-num">${w}</span></div>`;
+      }
     } else {
-      html += `<div class="week-block owner-off">
-        <span class="week-num">${w}</span>
-      </div>`;
+      html += `<div class="week-block" style="background:rgba(0,0,0,0.04);color:#ccc;"><span class="week-num">${w}</span></div>`;
     }
   }
   html += '</div>';
@@ -909,48 +351,40 @@ function renderSeasonBar(schedule) {
   container.innerHTML = html;
 }
 
-// ===== MONTH DETAIL =====
-function renderMonthDetail(schedule) {
+// ===== MONTH VIEW =====
+function renderMonthView() {
   const grid = document.getElementById('monthGrid');
-  const { seasonStart, seasonEnd } = config;
-
   grid.innerHTML = '';
 
   for (let m = 0; m < 12; m++) {
     const firstDay = new Date(2026, m, 1);
     const lastDay = new Date(2026, m + 1, 0);
+    const wStart = getWeekNumber(firstDay);
+    const wEnd = getWeekNumber(lastDay);
 
-    const card = document.createElement('div');
-    card.className = 'month-card';
-
-    // Season classification
     let season = 'winter';
     if (m >= 4 && m <= 8) season = 'summer';
     else if (m >= 2 && m <= 3) season = 'spring';
     else if (m >= 9 && m <= 10) season = 'autumn';
 
-    // Week range
-    const wStart = getWeekNumber(firstDay);
-    const wEnd = getWeekNumber(lastDay);
+    const card = document.createElement('div');
+    card.className = 'month-card';
 
     const header = document.createElement('div');
     header.className = `month-card-header ${season}`;
-    header.innerHTML = `<span>${getMonthName(m)}</span><span class="week-range">Uge ${wStart}-${wEnd}</span>`;
+    header.innerHTML = `<span>${monthNames[m]}</span><span class="week-range">Uge ${wStart}-${wEnd}</span>`;
     card.appendChild(header);
 
     const body = document.createElement('div');
     body.className = 'month-card-body';
 
-    // Day labels
-    const labels = ['M','T','O','T','F','L','S'];
-    labels.forEach(l => {
+    dayNames.forEach(l => {
       const el = document.createElement('div');
       el.className = 'day-label';
       el.textContent = l;
       body.appendChild(el);
     });
 
-    // Blank days
     const startDay = firstDay.getDay();
     const startOffset = startDay === 0 ? 6 : startDay - 1;
     for (let i = 0; i < startOffset; i++) {
@@ -959,22 +393,19 @@ function renderMonthDetail(schedule) {
       body.appendChild(blank);
     }
 
-    // Days
     const today = new Date();
     for (let d = 1; d <= lastDay.getDate(); d++) {
       const day = document.createElement('div');
       day.className = 'day';
+      const key = `${2026}-${String(m+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+      const owner = bookedDays.get(key);
 
-      const date = new Date(2026, m, d);
-      const week = getWeekNumber(date);
-
-      // Check if booked
-      const booking = schedule.find(b => week >= b.startWeek && week <= b.endWeek);
-      if (booking && week >= seasonStart && week <= seasonEnd) {
-        day.classList.add('booked', `booked-${booking.cls}`);
+      if (owner) {
+        day.classList.add('booked', `booked-${owner.toLowerCase()}`);
+        day.title = owner;
       }
 
-      // Today
+      const date = new Date(2026, m, d);
       if (date.toDateString() === today.toDateString()) {
         day.classList.add('today');
       }
@@ -989,37 +420,36 @@ function renderMonthDetail(schedule) {
 }
 
 // ===== BOOKING LIST =====
-function renderBookingList(schedule) {
+function renderBookingList() {
   const container = document.getElementById('bookingCards');
   container.innerHTML = '';
 
-  schedule.forEach(b => {
+  bookingRanges.forEach((b, i) => {
     const card = document.createElement('div');
     card.className = 'booking-card';
 
     const bar = document.createElement('div');
     bar.className = 'color-bar';
-    bar.style.background = b.color;
+    bar.style.background = ownerColors[b.who];
     card.appendChild(bar);
 
     const info = document.createElement('div');
     info.className = 'book-info';
-
     const owner = document.createElement('div');
     owner.className = 'book-owner';
-    owner.textContent = b.owner;
+    owner.textContent = b.who;
     info.appendChild(owner);
-
     const dates = document.createElement('div');
     dates.className = 'book-dates';
     dates.textContent = formatDateRange(b.startDate, b.endDate);
     info.appendChild(dates);
-
     card.appendChild(info);
 
+    const sw = getWeekNumber(b.startDate);
+    const ew = getWeekNumber(b.endDate);
     const weeks = document.createElement('div');
     weeks.className = 'book-weeks';
-    weeks.textContent = `Uge ${b.startWeek}${b.startWeek !== b.endWeek ? `–${b.endWeek}` : ''} · ${b.weeks} ${b.weeks === 1 ? 'uge' : 'uger'}`;
+    weeks.textContent = `Uge ${sw}${sw !== ew ? `–${ew}` : ''} · ${b.days.length} dage`;
     card.appendChild(weeks);
 
     container.appendChild(card);
@@ -1027,38 +457,19 @@ function renderBookingList(schedule) {
 }
 
 // ===== VIEW TOGGLES =====
-function showSummerOnly() {
+function showYearView() {
   document.getElementById('yearOverview').style.display = 'block';
   document.getElementById('monthDetailView').style.display = 'none';
-  document.getElementById('summerBtn').classList.add('active');
+  document.getElementById('yearBtn').classList.add('active');
+  document.getElementById('monthBtn').classList.remove('active');
 }
 
-function showAllMonths() {
+function showMonthView() {
   document.getElementById('yearOverview').style.display = 'none';
   document.getElementById('monthDetailView').style.display = 'block';
-  document.getElementById('summerBtn').classList.remove('active');
-  renderMonthDetail(generateSchedule(config));
-}
-
-// ===== CONFIG =====
-function toggleConfig() {
-  const panel = document.getElementById('configPanel');
-  panel.classList.toggle('open');
-  if (panel.classList.contains('open')) {
-    document.getElementById('seasonStart').value = config.seasonStart;
-    document.getElementById('seasonEnd').value = config.seasonEnd;
-    document.getElementById('blockWeeks').value = config.blockWeeks;
-    document.getElementById('firstOwner').value = config.firstOwner;
-  }
-}
-
-function applyConfig() {
-  config.seasonStart = parseInt(document.getElementById('seasonStart').value);
-  config.seasonEnd = parseInt(document.getElementById('seasonEnd').value);
-  config.blockWeeks = parseInt(document.getElementById('blockWeeks').value);
-  config.firstOwner = document.getElementById('firstOwner').value;
-  document.getElementById('configPanel').classList.remove('open');
-  render();
+  document.getElementById('yearBtn').classList.remove('active');
+  document.getElementById('monthBtn').classList.add('active');
+  renderMonthView();
 }
 
 // ===== INIT =====
